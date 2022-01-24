@@ -1,0 +1,33 @@
+.contenedorNavBar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logoMenu {
+    margin-left: 2rem;
+}
+
+.linksMenu {
+    margin-right: 2rem;
+}
+
+.linksMenu ul {
+    display: flex;
+}
+
+.linksMenu ul li {
+    list-style: none;
+    margin-left: 1.5rem;
+}
+
+a {
+    border-bottom: 2px solid black;
+}
+
+a:hover {
+    color: rgb(157, 255, 0);
+    text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.39);
+    border-color: rgb(157, 255, 0);
+    transition: 0.3s;
+}
