@@ -1,11 +1,12 @@
 import React from 'react';
 import './NavBar.css';
+import burmeetLogo from './img/burmeet-logo.png';
 
 export default function NavBar() {
     return (
         <div className='contenedorNavBar'>
             <div className='logoMenu'>
-                <a href='./App.js'>Burmeet</a>
+                <a href='./App.js'><img src={burmeetLogo} alt='logo de Burmeet' /></a>
             </div>
             <div className='linksMenu'>
                 <ul>
