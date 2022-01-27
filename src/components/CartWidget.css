@@ -1,0 +1,18 @@
+.contenedorCartWidget {
+    display: flex;
+    align-items: center;
+}
+
+.carrito {
+    color: beige;
+    text-shadow: 2px 2px 2px green;
+    font-size: 1.7rem;
+}
+
+.contadorCompras {
+    color: beige;
+    text-shadow: 2px 2px 2px green;
+    background-color: #1bae1b;
+    padding: 0.3rem;
+    border-radius: 2rem;
+}

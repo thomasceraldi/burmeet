@@ -18,3 +18,8 @@ a {
   text-decoration: none;
   color: white;
 }
+
+button {
+  background-color: transparent;
+  border: none;
+}

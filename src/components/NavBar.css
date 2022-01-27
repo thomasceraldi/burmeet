@@ -2,19 +2,21 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin: 1rem 2rem 0;
 }
 
-.logoMenu {
-    margin-top: 1rem;
-    margin-left: 2rem;
+.contenedorLogoLink {
+    display: flex;
+    align-items: center;
 }
 
-.linksMenu {
-    margin-right: 2rem;
+.logo {
+    width: 5.2rem;
 }
 
 .linksMenu ul {
     display: flex;
+    padding-left: 0.9rem;
 }
 
 .linksMenu ul li {
@@ -23,12 +25,14 @@
 }
 
 a {
+    color: beige !important;
+    text-shadow: 2px 2px 2px green !important;
     border-bottom: 2px solid black;
 }
 
 a:hover {
-    color: rgb(157, 255, 0);
-    text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.39);
+    color: rgb(157, 255, 0) !important;
+    text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.39) !important;
     border-color: rgb(157, 255, 0);
     transition: 0.3s;
 }
