@@ -1,0 +1,35 @@
+.contenedorItemCount {
+    display: inline-block;
+    border: solid 1px #f5f5dc75;
+    box-shadow: 1px 1px 1px #0f440f;
+    padding: 0.5rem;
+    margin-top: 1.5rem;
+}
+
+.contenedorBotonesSumaResta {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.contenedorBotonesSumaResta p {
+    color: beige;
+    text-shadow: 2px 2px 2px green;
+    font-size: 1.5rem;
+}
+
+.operador {
+    color: beige;
+    text-shadow: 2px 2px 2px green;
+    font-size: 1.5rem;
+}
+
+.botonAgregarCarrito {
+    color: beige;
+    text-shadow: 2px 2px 2px #008000a6;
+    border: solid 1px #1bae1b9c;
+    padding: 0.5rem;
+    border-radius: 2rem;
+    font-size: 1.2rem;
+}
+

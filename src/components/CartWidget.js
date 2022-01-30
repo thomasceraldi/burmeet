@@ -7,9 +7,7 @@ export default function CartWidget(){
     return (
         <div className='contenedorCartWidget'>
             <div>
-                <button type="button">
-                    <FontAwesomeIcon icon={faShoppingCart} className='carrito'/>
-                </button>
+                <button><FontAwesomeIcon icon={faShoppingCart} className='carrito'/></button>
             </div>
             <div>
                 <p className='contadorCompras'>2</p>
