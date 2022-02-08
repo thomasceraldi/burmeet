@@ -1,0 +1,28 @@
+.contenedorItems {
+    border: solid 1px white;
+    box-shadow: 2px 2px 2px #acaca9;
+    font-family: all-petite-caps;
+    margin: 2rem;
+}
+
+.imagenProducto img{
+    border-radius: 10rem;
+    margin-top: 1rem;
+}
+
+.tituloProducto {
+    color: beige;
+    font-size: 1.1rem;
+    text-shadow: 2px 2px 2px green;
+}
+
+.descripcionProducto {
+    color: beige;
+    font-size: 1.1rem;
+    text-shadow: 2px 2px 2px green;
+    padding: 0 2rem;
+}
+
+.precioProducto p {
+    color: green;
+}
