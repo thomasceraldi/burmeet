@@ -3,15 +3,38 @@
     justify-content: center;
     align-items: center;
 }
+
 .bienvenida {
-    color: #2aba0f;
-    font-size: 1.5rem;
-    text-shadow: 2px 2px 2px #f5f5dc52;
+    color: #53f135;
+    font-size: 2.2rem;
+    text-shadow: 1px 1px 1px #aac6b88a;
 }
 
 .burger {
-    color: #2aba0f;
-    font-size: 1.5rem !important;
-    text-shadow: 2px 2px 2px #f5f5dc52;
+    color: #53f135;
+    font-size: 2.2rem !important;
     padding: 0 1.2rem;
+}
+
+.contenedorSpinner {
+    height: 39rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    -webkit-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    transition: all 1s ease;
+}
+
+.spinner {
+    color: #2aba0f;
+    font-size: 4rem;
+    -webkit-animation: girar 1.5s linear infinite;
+    -o-animation: girar 1.5s linear infinite;
+    animation: girar 1.5s linear infinite;
+}
+
+@keyframes girar {
+    from {transform: rotate(0deg); opacity: 100%;}
+    to {transform: rotate(360deg); opacity: 0;}
 }

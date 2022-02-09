@@ -26,7 +26,7 @@ export default function ItemListContainer({greeting}) {
                 <h1 className="bienvenida">{greeting}</h1>
                 <FontAwesomeIcon icon={faHamburger} className="burger"/>
             </div>
-            {productos.length > 0 ? <ItemList producto={productos}/> : <FontAwesomeIcon icon={faSpinner} className="spinner"/>}
+            {productos.length > 0 ? <ItemList producto={productos}/> : <div className="contenedorSpinner"><FontAwesomeIcon icon={faSpinner} className="spinner"/></div>}
             <ItemCount stock={5} initial={numeroCompraInicial} numeroCompras={setNumeroCompraInicial}/>
         </div>
     );

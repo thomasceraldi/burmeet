@@ -1,4 +1,4 @@
-.contenedorItems {
+.contenedorItemFiltrado {
     background: linear-gradient(45deg, #0a1a0fc2, #29c475c7);
     border: solid 1px white;
     border-radius: 2rem;
@@ -15,29 +15,29 @@
     to {opacity: 100%;}
 }
 
-.contenedorItems:hover {
+.contenedorItemFiltrado:hover {
     box-shadow: 3px 3px 3px rgb(129, 196, 5);
 }
 
-.imagenProducto img{
+.imagenProductoFiltrado img{
     border-radius: 10rem;
     margin-top: 1rem;
 }
 
-.tituloProducto {
+.tituloProductoFiltrado {
     color: beige;
     font-size: 1.1rem;
     text-shadow: 2px 2px 2px green;
 }
 
-.descripcionProducto {
+.descripcionProductoFiltrado {
     color: beige;
     font-size: 1.1rem;
     text-shadow: 2px 2px 2px green;
     padding: 0 2rem;
 }
 
-.precioProducto p {
+.precioProductoFiltrado p {
     color: rgb(157 255 0);
     text-shadow: 1px 1px 1px black;
     font-size: 1.3rem;
