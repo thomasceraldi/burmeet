@@ -14,6 +14,15 @@
     width: 5.2rem;
 }
 
+.linksMenu {
+    display: flex;
+}
+
+.linksMenu p {
+    color:rgb(157, 255, 0);
+    margin-left: 1rem;
+}
+
 .linksMenu ul {
     display: flex;
     padding-left: 0.9rem;
@@ -31,8 +40,17 @@ a {
 }
 
 a:hover {
-    color: rgb(157, 255, 0) !important;
+    color: rgb(144 208 41) !important;
     text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.39) !important;
     border-color: rgb(157, 255, 0);
     transition: 0.3s;
+}
+
+a.active {
+    color: rgb(157, 255, 0) !important;
+    text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.39) !important;
+}
+
+.filtrosCategoria {
+    padding-left: 0 !important;
 }

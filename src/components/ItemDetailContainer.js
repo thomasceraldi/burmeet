@@ -1,21 +1,23 @@
 import React, {useState, useEffect} from 'react';
 import './ItemDetailContainer.css';
+import {useParams} from 'react-router-dom';
 import {getItems} from './api/getItems';
 import ItemDetail from "./ItemDetail";
 
 export default function ItemDetailContainer(){
-    const [producto, setProducto] = useState([]);
+    const [producto, setProducto] = useState();
+    const {productoId} = useParams();
 
     useEffect(() => {
         getItems().then((producto) => {
-            const itemFiltrado = producto.find((i) => i.id === "classic");
+            const itemFiltrado = producto.find((i) => {return i.id === productoId});
             setProducto(itemFiltrado);
         });
-    }, []);
+    }, [productoId]);
 
     return (
         <div className='contenedorItemDetailContainer'>
-            {producto.id === "classic" ? <ItemDetail item={producto}/> : <div className="contenedorCargando"><p className='cargando'>Cargando...</p></div>}
+            {!producto ? <div className="contenedorCargando"><p className='cargando'>Cargando...</p></div> : <ItemDetail item={producto}/>}
         </div>
     );
 };

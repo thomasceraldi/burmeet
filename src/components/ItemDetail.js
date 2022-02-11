@@ -16,6 +16,9 @@ export default function ItemDetail({item}){
             <div className='precioProductoFiltrado'>
                 <p>$ {new Intl.NumberFormat("de-DE").format(item.precio)}</p>
             </div>
+            <div>
+                <button className='botonComprar'>Comprar</button>
+            </div>
         </div>
     );
 };

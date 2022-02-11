@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from "react";
+import {useParams} from "react-router-dom";
 import './ItemListContainer.css';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faHamburger} from '@fortawesome/free-solid-svg-icons';
@@ -7,15 +8,22 @@ import {getItems} from './api/getItems';
 import ItemList from "./ItemList";
 import {faSpinner} from "@fortawesome/free-solid-svg-icons";
 
+
 export default function ItemListContainer({greeting}) {
 
     const [productos, setProductos] = useState([]);
+    const {productoCategoria} = useParams();
 
     useEffect(() => {
         getItems().then((productos) => {
-            setProductos(productos);
+            if(!productoCategoria){
+                setProductos(productos);
+            }else{
+                const productoFiltrados = productos.filter((producto) => {return producto.categoria === productoCategoria});
+                setProductos(productoFiltrados);
+            };
         });
-    }, []);
+    }, [productoCategoria]);
 
     const[numeroCompraInicial, setNumeroCompraInicial] = useState(1);
 

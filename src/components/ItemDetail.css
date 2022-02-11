@@ -32,7 +32,6 @@
 
 .descripcionProductoFiltrado {
     color: beige;
-    font-size: 1.1rem;
     text-shadow: 2px 2px 2px green;
     padding: 0 2rem;
 }
@@ -40,5 +39,21 @@
 .precioProductoFiltrado p {
     color: rgb(157 255 0);
     text-shadow: 1px 1px 1px black;
-    font-size: 1.3rem;
+    font-size: 1.5rem;
+}
+
+.botonComprar {
+    background-color: black;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    border-radius: 2rem;
+    box-shadow: 2px 2px 2px;
+    font-size: 1.2rem;
+    color: gainsboro;
+    width: 10rem;
+}
+
+.botonComprar:hover {
+    color: rgb(157 255 0);
+    background-color: black;
 }
