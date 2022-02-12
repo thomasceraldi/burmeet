@@ -3,7 +3,6 @@ import {useParams} from "react-router-dom";
 import './ItemListContainer.css';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faHamburger} from '@fortawesome/free-solid-svg-icons';
-import ItemCount from "./ItemCount";
 import {getItems} from './api/getItems';
 import ItemList from "./ItemList";
 import {faSpinner} from "@fortawesome/free-solid-svg-icons";
@@ -25,8 +24,6 @@ export default function ItemListContainer({greeting}) {
         });
     }, [productoCategoria]);
 
-    const[numeroCompraInicial, setNumeroCompraInicial] = useState(1);
-
     return (
         <div>
             <div className="contenedorItemList">
@@ -35,7 +32,8 @@ export default function ItemListContainer({greeting}) {
                 <FontAwesomeIcon icon={faHamburger} className="burger"/>
             </div>
             {productos.length > 0 ? <ItemList producto={productos}/> : <div className="contenedorSpinner"><FontAwesomeIcon icon={faSpinner} className="spinner"/></div>}
-            <ItemCount stock={5} initial={numeroCompraInicial} numeroCompras={setNumeroCompraInicial}/>
+            <p className="descripcionesItemListContainer">* Todas las hamburguesas vienen con papas</p>
+            <p className="descripcionesItemListContainer">* Todos los envios son sin cargo</p>
         </div>
     );
 };

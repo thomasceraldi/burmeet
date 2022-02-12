@@ -38,3 +38,14 @@
     from {transform: rotate(0deg); opacity: 100%;}
     to {transform: rotate(360deg); opacity: 0;}
 }
+
+.descripcionesItemListContainer {
+    margin-top: 1rem;
+    color: #2aba0f;
+    font-size: 1.2rem;
+    text-shadow: 1px 1px 1px #aac6b88a;
+}
+
+.descripcionesItemListContainer:last-of-type {
+    margin-bottom: 2rem;
+}

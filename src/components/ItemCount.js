@@ -1,38 +1,39 @@
-import React from "react";
+import React, { useState } from "react";
 import './ItemCount.css';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faMinus} from '@fortawesome/free-solid-svg-icons';
 import {faPlus} from "@fortawesome/free-solid-svg-icons";
 
 
-export default function ItemCount({stock, initial, numeroCompras}) {
+export default function ItemCount({stock, initial, onAdd}) {
+    const [itemCounter, setItemCounter] = useState(initial);
     
-    function sustraccionProducto(){
-        if(initial > 1) {
-            numeroCompras(initial - 1);
+    function sumar(){
+        if(itemCounter < stock) {
+            setItemCounter(itemCounter + 1);
         };
     };
 
-    function adicionProducto(){
-        if(initial < stock) {
-            numeroCompras(initial + 1);
+    function restar(){
+        if(itemCounter > 1) {
+            setItemCounter(itemCounter - 1);
         };
     };
 
-    function onAdd(){
-        console.log('Se realizo su compra de ' + initial.toString() + ' productos');
-        numeroCompras(initial = 1);
-    }
+    function addToCart(){
+        onAdd(itemCounter);
+    };
+
 
     return (
         <div className="contenedorItemCount">
             <div className="contenedorBotonesSumaResta">
-                <button onClick={sustraccionProducto}><FontAwesomeIcon icon={faMinus} className="operador"/></button>
-                <p>{initial}</p>
-                <button onClick={adicionProducto}><FontAwesomeIcon icon={faPlus} className="operador"/></button>
+                <button onClick={restar}><FontAwesomeIcon icon={faMinus} className="operador"/></button>
+                <p>{itemCounter}</p>
+                <button onClick={sumar}><FontAwesomeIcon icon={faPlus} className="operador"/></button>
             </div>
             <div>
-                <button onClick={onAdd} className="botonAgregarCarrito">Agregar al carrito</button>
+                <button onClick={addToCart} className="botonAgregarCarrito">Agregar al carrito</button>
             </div>
         </div>
     );

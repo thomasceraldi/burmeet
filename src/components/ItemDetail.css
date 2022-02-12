@@ -39,21 +39,28 @@
 .precioProductoFiltrado p {
     color: rgb(157 255 0);
     text-shadow: 1px 1px 1px black;
-    font-size: 1.5rem;
+    font-size: 1.65rem;
 }
 
-.botonComprar {
+.contenedorIrCarrito {
+    margin: 3rem 0;
+}
+
+.botonIrCarrito {
     background-color: black;
-    padding: 0.5rem;
-    margin-bottom: 1rem;
+    padding: 0.9rem;
     border-radius: 2rem;
     box-shadow: 2px 2px 2px;
-    font-size: 1.2rem;
-    color: gainsboro;
+    font-size: 1.5rem;
+    color: gainsboro !important;
     width: 10rem;
+    text-shadow: none !important;
+    border: none;
 }
 
-.botonComprar:hover {
-    color: rgb(157 255 0);
+.botonIrCarrito:hover {
+    color: rgb(157 255 0) !important;
     background-color: black;
+    text-shadow: none !important;
+    border: none;
 }

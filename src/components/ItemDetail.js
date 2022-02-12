@@ -1,7 +1,15 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './ItemDetail.css';
+import ItemCount from "./ItemCount";
+import {Link} from 'react-router-dom';
 
 export default function ItemDetail({item}){
+    const[itemCount, setItemCount] = useState();
+
+    function onAddTime(newItemCount){
+        setItemCount(newItemCount);
+    };
+
     return (
         <div className='contenedorItemFiltrado'>
             <div className='imagenProductoFiltrado'>
@@ -16,9 +24,7 @@ export default function ItemDetail({item}){
             <div className='precioProductoFiltrado'>
                 <p>$ {new Intl.NumberFormat("de-DE").format(item.precio)}</p>
             </div>
-            <div>
-                <button className='botonComprar'>Comprar</button>
-            </div>
+            {!itemCount ? <ItemCount stock={10} initial={1} onAdd={onAddTime}/> : <div className='contenedorIrCarrito'><Link to='/cart' className='botonIrCarrito'>Ir al carrito</Link></div>}
         </div>
     );
 };
