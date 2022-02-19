@@ -13,7 +13,7 @@ export default function Item({item}){
                     <h2>{item.titulo}</h2>
                 </div>
                 <div className='precioProducto'>
-                    <p>$ {new Intl.NumberFormat("de-DE").format(item.precio)}</p>
+                    <p>{'$'+new Intl.NumberFormat("de-DE").format(item.precio)}</p>
                 </div>
             </Link>
         </div>

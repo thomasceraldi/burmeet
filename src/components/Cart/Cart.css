@@ -1,0 +1,40 @@
+.mensajeCarrito {
+    color: #53f135;
+    font-size: 2.2rem;
+    text-shadow: 1px 1px 1px #aac6b88a;
+}
+
+.contenedorGlobalItemsCarrito {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.contenedorProductosCarrito {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    margin-top: 1.5rem;
+}
+
+.sumaTotal {
+    color: #1faf15;
+    text-shadow: 1px 1px 1px #ffffff3d;
+    font-size: 1.6rem;
+}
+
+.botonCarrito {
+    background-color: white;
+    margin: 2rem;
+    padding: 0.5rem;
+    border-radius: 2rem;
+    box-shadow: 2px 2px 2px;
+    font-size: 1.2rem;
+    color: black;
+}
+
+.botonCarrito:hover {
+    color: rgb(157 255 0);
+    background-color: gray;
+    transition: 0.3s;
+}

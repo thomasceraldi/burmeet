@@ -3,8 +3,8 @@ import {useParams} from "react-router-dom";
 import './ItemListContainer.css';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faHamburger} from '@fortawesome/free-solid-svg-icons';
-import {getItems} from './api/getItems';
-import ItemList from "./ItemList";
+import {getItems} from '../../api/getItems';
+import ItemList from "./ItemList/ItemList";
 import {faSpinner} from "@fortawesome/free-solid-svg-icons";
 
 
