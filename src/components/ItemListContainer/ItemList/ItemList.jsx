@@ -11,7 +11,7 @@ export default function ItemList({producto}){
                         <Item key={productoItem.id} item={productoItem}/>
                     );
                 })
-            }
+            };
         </div>
     );
 };

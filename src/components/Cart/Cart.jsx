@@ -11,11 +11,13 @@ export default function Cart(){
             {cart.length === 0 ? (<h1 className='mensajeCarrito'>Aun no hay productos en el carrito</h1>) : (
                 <>
                     <div className='contenedorGlobalItemsCarrito'>
-                        {cart.map((producto) => (
-                            <div className='contenedorProductosCarrito'>
-                                <CartDetail key={producto.id} itemCartDetail={producto}/>
-                            </div>
-                        ))}
+                        {cart.map(function(producto) {
+                            return (
+                                <div key={producto.id} className='contenedorProductosCarrito'>
+                                    <CartDetail itemCartDetail={producto}/>
+                                </div>
+                            );
+                        })};
                     </div>
                     <div>
                         <p className='sumaTotal'>{'Total: $'+new Intl.NumberFormat("de-DE").format(sumaTotalCarrito())}</p>

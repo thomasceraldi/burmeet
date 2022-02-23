@@ -2,7 +2,7 @@ import React from 'react';
 import './NavBar.css';
 import {Link, NavLink} from 'react-router-dom';
 import burmeetLogo from '../../img/burmeet-logo.png';
-import CartWidget from './CartWidget/CartWidget.js';
+import CartWidget from './CartWidget/CartWidget';
 
 export default function NavBar() {
     return (

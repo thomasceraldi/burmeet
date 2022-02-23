@@ -40,5 +40,10 @@ export default function CartContextProvider({children}){
         return sumaTotal;
     };
 
-    return <CartContext.Provider value={{cart, addToCart, clearCart, removeToCart, sumaTotalCarrito}}>{children}</CartContext.Provider>;
+    function sumarItems(){
+        const sumaItemsTotal = cart.length;
+        return sumaItemsTotal;
+    };
+
+    return <CartContext.Provider value={{cart, addToCart, clearCart, removeToCart, sumaTotalCarrito, sumarItems}}>{children}</CartContext.Provider>;
 };

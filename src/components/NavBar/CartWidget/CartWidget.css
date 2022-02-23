@@ -3,6 +3,10 @@
     align-items: center;
 }
 
+.contenedorCarrito {
+    margin-right: 0.5rem;
+}
+
 .carrito {
     color: beige;
     text-shadow: 2px 2px 2px green;
