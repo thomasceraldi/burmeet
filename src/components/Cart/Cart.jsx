@@ -2,9 +2,10 @@ import React, {useContext} from 'react';
 import './Cart.css';
 import {CartContext} from '../../context/CartContext';
 import CartDetail from './CartDetail/CartDetail';
+import CartForm from './CartForm/CartForm';
 
 export default function Cart(){
-    const {cart, clearCart, sumaTotalCarrito} = useContext(CartContext);
+    const {cart, sumaTotalCarrito} = useContext(CartContext);
 
     return (
         <>
@@ -22,10 +23,7 @@ export default function Cart(){
                     <div>
                         <p className='sumaTotal'>{'Total: $'+new Intl.NumberFormat("de-DE").format(sumaTotalCarrito())}</p>
                     </div>
-                    <div>
-                        <button onClick={clearCart} className='botonCarrito'>Limpiar Carrito</button>
-                        <button className='botonCarrito'>Finalizar Compra</button>
-                    </div>
+                    <CartForm />
                 </>
             )}
         </>

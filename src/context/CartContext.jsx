@@ -45,5 +45,13 @@ export default function CartContextProvider({children}){
         return cart.reduce((prev, item) => prev += item.cantidad, 0);
     };
 
-    return <CartContext.Provider value={{cart, addToCart, clearCart, removeToCart, sumaTotalCarrito, sumarItems}}>{children}</CartContext.Provider>;
+    function relevanteCompra(){
+        const arrayRelevanciaCompra = [];
+        cart.forEach((producto) => {
+            arrayRelevanciaCompra.push({id: producto.id, cantidad: producto.cantidad, titulo: producto.titulo, precio: producto.precio});
+        });
+        return arrayRelevanciaCompra;
+    };
+
+    return <CartContext.Provider value={{cart, addToCart, clearCart, removeToCart, sumaTotalCarrito, sumarItems, relevanteCompra}}>{children}</CartContext.Provider>;
 };

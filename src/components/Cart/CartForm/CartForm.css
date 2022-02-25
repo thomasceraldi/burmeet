@@ -1,0 +1,50 @@
+.tituloFormOrden {
+    color: white;
+}
+
+.labelFormOrden {
+    color: white;
+    display: block;
+}
+
+.campoValido {
+    border-radius: 1.5rem;
+    padding: 0.3rem;
+    text-align: center;
+    font-size: 1rem;
+    margin-top: 0.3rem;
+    transition: 0.3s;
+}
+
+.campoInvalido {
+    background-color: rgba(78, 16, 16, 0.856);
+    color: white;
+    border-radius: 1.5rem;
+    padding: 0.3rem;
+    text-align: center;
+    font-size: 1rem;
+    margin-top: 0.3rem;
+    transition: 0.3s;
+}
+
+.botonCarrito {
+    background-color: white;
+    margin: 2rem 2rem 1rem 2rem;
+    padding: 0.5rem;
+    border-radius: 2rem;
+    box-shadow: 2px 2px 2px;
+    font-size: 1.2rem;
+    color: black;
+}
+
+.botonCarrito:hover {
+    color: rgb(157 255 0);
+    background-color: gray;
+    transition: 0.3s;
+}
+
+.mensajeCompra {
+    color: white;
+    margin-top: 0;
+    margin-bottom: 2rem;
+}

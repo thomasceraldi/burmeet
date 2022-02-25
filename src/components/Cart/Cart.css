@@ -22,19 +22,3 @@
     text-shadow: 1px 1px 1px #ffffff3d;
     font-size: 1.6rem;
 }
-
-.botonCarrito {
-    background-color: white;
-    margin: 2rem;
-    padding: 0.5rem;
-    border-radius: 2rem;
-    box-shadow: 2px 2px 2px;
-    font-size: 1.2rem;
-    color: black;
-}
-
-.botonCarrito:hover {
-    color: rgb(157 255 0);
-    background-color: gray;
-    transition: 0.3s;
-}
