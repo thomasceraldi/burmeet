@@ -21,6 +21,7 @@ export default function CartContextProvider({children}){
                 producto.cantidad += cantidad;
             };
         });
+        setCart(carrito);
     };
 
     function removeToCart(itemId){
@@ -41,8 +42,7 @@ export default function CartContextProvider({children}){
     };
 
     function sumarItems(){
-        const sumaItemsTotal = cart.length;
-        return sumaItemsTotal;
+        return cart.reduce((prev, item) => prev += item.cantidad, 0);
     };
 
     return <CartContext.Provider value={{cart, addToCart, clearCart, removeToCart, sumaTotalCarrito, sumarItems}}>{children}</CartContext.Provider>;
