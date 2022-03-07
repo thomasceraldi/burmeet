@@ -1,7 +1,12 @@
 .mensajeCarrito {
+    display: grid;
     color: #53f135;
     font-size: 2.2rem;
     text-shadow: 1px 1px 1px #aac6b88a;
+}
+
+.click{
+    margin-top: 1rem;
 }
 
 .contenedorGlobalItemsCarrito {

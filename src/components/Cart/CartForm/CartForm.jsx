@@ -5,45 +5,50 @@ import {addDoc, collection} from 'firebase/firestore';
 import {baseDatos} from '../../../firebase';
 
 export default function CartForm(){
-    const {relevanteCompra, clearCart, sumaTotalCarrito} = useContext(CartContext);
+    const {datosRelevantesCompra, clearCart, sumaTotalCarrito} = useContext(CartContext);
     const [className, setClassName] = useState('campoValido');
     const [mensajeCompra, setMensajeCompra] = useState('');
+    const [ordenId, setOrdenId] = useState([]);
 
     const [nombre, setNombre] = useState('');
     const [telefono, setTelefono] = useState('');
     const [email, setEmail] = useState('');
+    const [emailConfirmado, setEmailConfirmado] = useState('');
     const [direccion, setDireccion] = useState('');
 
     const controladorNombre = e => setNombre(e.target.value);
     const controladorTelefono = e => setTelefono(e.target.value);
     const controladorEmail = e => setEmail(e.target.value);
+    const controladorEmailConfirmado = e => setEmailConfirmado(e.target.value);
     const controladorDireccion = e => setDireccion(e.target.value);
-
-    
 
     function onSubmit(e){
         e.preventDefault();
-        if(![nombre, telefono, email, direccion].some(valor => valor === '')){
-            const itemCollection = collection(baseDatos, 'ordenes');
-            const nuevaOrden = {
-                buyer: {
-                    nombre,
-                    telefono,
-                    email,
-                    direccion
-                },
-                items: relevanteCompra(),
-                total: sumaTotalCarrito()
+        if(![nombre, telefono, email, emailConfirmado, direccion].some(valor => valor === '')){
+            if(emailConfirmado === email){
+                const nuevaOrden = {
+                    fecha: new Date(),
+                    buyer: {nombre, telefono, email, direccion},
+                    items: datosRelevantesCompra(),
+                    total: sumaTotalCarrito()
+                };
+                const itemCollection = collection(baseDatos, 'ordenes');
+                addDoc(itemCollection, nuevaOrden)
+                .then((res) => {
+                    setOrdenId(res.id);
+                });
+                setNombre(e.target.reset());
+                setTelefono(e.target.reset());
+                setEmail(e.target.reset());
+                setEmailConfirmado(e.target.reset());
+                setDireccion(e.target.reset());
+                setMensajeCompra('Su orden se registro con exito. ¡En breve llegara a destino!');
+            }else{
+                setMensajeCompra('El email de confirmacion no coindice');
+                setTimeout(()=> {
+                    setMensajeCompra('');
+                }, 3000);
             };
-            addDoc(itemCollection, nuevaOrden);
-            setNombre(e.target.reset());
-            setTelefono(e.target.reset());
-            setEmail(e.target.reset());
-            setDireccion(e.target.reset());
-            setMensajeCompra('Su orden se registro con exito. ¡En breve llegara a destino!');
-            setTimeout(() => {
-                setMensajeCompra('');
-            }, 3000);
         }else{
             setClassName('campoInvalido');
             setMensajeCompra('Faltan completar campos');
@@ -59,7 +64,7 @@ export default function CartForm(){
             <h2 className='tituloFormOrden'>Registre su orden</h2>
             <form onSubmit={onSubmit}>
                 <div>
-                    <label className='labelFormOrden'>Nombre</label>
+                    <label className='labelFormOrden'>Nombre Completo</label>
                     <input className={className} value={nombre} onChange={controladorNombre} type='text'/>
                 </div>
                 <div>
@@ -69,6 +74,10 @@ export default function CartForm(){
                 <div>
                     <label className='labelFormOrden'>Email</label>
                     <input className={className} value={email} onChange={controladorEmail} type='email'/>
+                </div>
+                <div>
+                    <label className='labelFormOrden'>Confirmar Email</label>
+                    <input className={className} value={emailConfirmado} onChange={controladorEmailConfirmado} type='email'/>
                 </div>
                 <div>
                     <label className='labelFormOrden'>Direccion</label>
@@ -81,7 +90,10 @@ export default function CartForm(){
                 <div>
                     <p className='mensajeCompra'>{mensajeCompra}</p>
                 </div>
+                <div>
+                    <p className='orden'>Su codigo de orden es: <span className='ordenInfo'>{ordenId}</span></p>
+                </div>
             </form>
         </div>
-    );
+    )
 };

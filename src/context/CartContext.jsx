@@ -45,7 +45,7 @@ export default function CartContextProvider({children}){
         return cart.reduce((prev, item) => prev += item.cantidad, 0);
     };
 
-    function relevanteCompra(){
+    function datosRelevantesCompra(){
         const arrayRelevanciaCompra = [];
         cart.forEach((producto) => {
             arrayRelevanciaCompra.push({id: producto.id, cantidad: producto.cantidad, titulo: producto.titulo, precio: producto.precio});
@@ -53,5 +53,5 @@ export default function CartContextProvider({children}){
         return arrayRelevanciaCompra;
     };
 
-    return <CartContext.Provider value={{cart, addToCart, clearCart, removeToCart, sumaTotalCarrito, sumarItems, relevanteCompra}}>{children}</CartContext.Provider>;
+    return <CartContext.Provider value={{cart, addToCart, clearCart, removeToCart, sumaTotalCarrito, sumarItems, datosRelevantesCompra}}>{children}</CartContext.Provider>;
 };

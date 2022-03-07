@@ -9,7 +9,7 @@ export default function Cart(){
 
     return (
         <>
-            {cart.length === 0 ? (<h1 className='mensajeCarrito'>Aun no hay productos en el carrito</h1>) : (
+            {cart.length === 0 ? (<><h1 className='mensajeCarrito'>Aun no hay productos en el carrito. <span className='click'>¡Clickea el logo y encontra tu hamburguesa!</span></h1></>) : (
                 <>
                     <div className='contenedorGlobalItemsCarrito'>
                         {cart.map(function(producto) {
@@ -17,8 +17,8 @@ export default function Cart(){
                                 <div key={producto.id} className='contenedorProductosCarrito'>
                                     <CartDetail itemCartDetail={producto}/>
                                 </div>
-                            );
-                        })};
+                            )
+                        })}
                     </div>
                     <div>
                         <p className='sumaTotal'>{'Total: $'+new Intl.NumberFormat("de-DE").format(sumaTotalCarrito())}</p>
